@@ -10,6 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Narcissism_Android">
         <activity android:name=".OptionActivity"></activity>
+        <activity android:name=".SearchingActivity"></activity>
+        <activity android:name=".CategoryActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
