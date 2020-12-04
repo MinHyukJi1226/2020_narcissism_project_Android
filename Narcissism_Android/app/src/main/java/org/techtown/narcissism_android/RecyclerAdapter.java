@@ -40,20 +40,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
     class ItemViewHolder extends RecyclerView.ViewHolder {
 
         private TextView title;
-        private TextView content;
+        //private TextView content;
         private ImageView imageView;
 
         ItemViewHolder(View itemView) {
             super(itemView);
 
             title = itemView.findViewById(R.id.questionTitle);
-            content = itemView.findViewById(R.id.questionContent);
+            //content = itemView.findViewById(R.id.questionContent);
             imageView = itemView.findViewById(R.id.questionImage);
 
         }
         void onBind(Data data){
             title.setText(data.getTitle());
-            content.setText(data.getContent());
+            //content.setText(data.getContent());
             //imageView.setImageResource(data.getImage());
         }
 

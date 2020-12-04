@@ -9,12 +9,23 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import org.techtown.narcissism_android.data.CategoryResponse;
+import org.techtown.narcissism_android.data.QuestionResponse;
+import org.techtown.narcissism_android.net.Server;
+
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class CategoryActivity extends AppCompatActivity {
 
     private RecyclerAdapter adapter = new RecyclerAdapter();
+    private Call<List<CategoryResponse>> request;
+    private int id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +35,8 @@ public class CategoryActivity extends AppCompatActivity {
         TextView category = findViewById(R.id.categoryId);
 
         Intent intent = getIntent();
+        id = intent.getIntExtra("categoryId", 1);
+
         int categoryId = intent.getIntExtra("categoryId", -1);
         switch (categoryId){
             case 1:{
@@ -48,29 +61,43 @@ public class CategoryActivity extends AppCompatActivity {
             }
         }
         init();
-        getData();
+        getCategories();
     }
+
+    private void getCategories(){
+        request = Server.getInstance().getApi().getCategory(id);
+        request.enqueue((new Callback<List<CategoryResponse>>() {
+            @Override
+            public void onResponse(Call<List<CategoryResponse>> call, Response<List<CategoryResponse>> response) {
+
+                if(response.code() == 200){
+                    List<CategoryResponse> result = response.body();
+                    getData(result);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<CategoryResponse>> call, Throwable t) {
+
+            }
+        }));
+    }
+
 
     private void init(){
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(manager);
-
         recyclerView.setAdapter(adapter);
     }
 
-    private void getData(){
+    private void getData(List<CategoryResponse> categoryList){
 
-        List<String> listTitle = Arrays.asList("d","d","d","d","d","d","d");
-        List<String> listContent = Arrays.asList("d","d","d","d","d","d","d");
-        List<Integer> listImage = Arrays.asList();
-
-        for(int i = 0; i < listTitle.size(); i++){
+        for(int i = 0; i < categoryList.size(); i++){
             Data data = new Data();
-            data.setTitle(listTitle.get(i));
-            data.setContent(listContent.get(i));
+            data.setTitle(categoryList.get(i).question);
+//            data.setContent(listContent.get(i));
 //            data.setImage(listImage.get(i));
-
             adapter.addItem(data);
         }
         adapter.notifyDataSetChanged();

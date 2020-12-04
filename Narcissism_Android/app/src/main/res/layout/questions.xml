@@ -29,14 +29,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/questionContent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="TextView"
                 android:textSize="17dp" />
 
         </LinearLayout>
