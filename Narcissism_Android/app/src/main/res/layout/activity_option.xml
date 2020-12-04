@@ -29,7 +29,7 @@
 
     <Button
         android:id="@+id/buttonLocation"
-        android:layout_width="match_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="97dp"
         android:text="지역설정"
@@ -40,7 +40,7 @@
 
     <Button
         android:id="@+id/buttonInfomation"
-        android:layout_width="match_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
         android:text="앱 정보"
@@ -51,7 +51,7 @@
 
     <Button
         android:id="@+id/buttonBookmark2"
-        android:layout_width="match_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:text="북마크"
