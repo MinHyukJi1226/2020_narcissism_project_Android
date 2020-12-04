@@ -7,7 +7,7 @@
     tools:context=".OptionActivity">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textOption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageBack"
         android:layout_width="26dp"
         android:layout_height="11dp"
         android:layout_marginStart="32dp"
@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonLocation" />
 
     <Button
-        android:id="@+id/buttonBookmark2"
+        android:id="@+id/buttonBookmark"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -61,7 +61,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonLocation" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/textUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -71,7 +71,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textInformation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
