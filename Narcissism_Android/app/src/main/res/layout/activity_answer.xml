@@ -8,14 +8,13 @@
 
     <ImageView
         android:id="@+id/view2"
-        android:layout_width="405dp"
+        android:layout_width="0dp"
         android:layout_height="230dp"
         android:background="@drawable/circleblue_background"
         android:scaleX="2"
         android:scaleY="2"
         android:translationX="30dp"
         android:translationY="-130dp"
-        app:layout_constraintBottom_toTopOf="@+id/detailLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,36 +23,11 @@
         android:id="@+id/titleTextView"
         android:layout_width="147dp"
         android:layout_height="34dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="100dp"
         android:text="제목"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:id="@+id/detailLayout"
-        android:layout_width="411dp"
-        android:layout_height="502dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="512dp" />
-
-        <TextView
-            android:id="@+id/subTitleTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="208dp"
-            android:text="내용" />
-
-    </LinearLayout>
 
     <ImageButton
         android:id="@+id/backBnt"
@@ -74,4 +48,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/search" />
 
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="74dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView">
+
+        <LinearLayout
+            android:id="@+id/detailLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

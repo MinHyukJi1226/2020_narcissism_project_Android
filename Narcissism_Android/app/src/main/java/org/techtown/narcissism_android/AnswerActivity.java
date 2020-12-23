@@ -27,15 +27,20 @@ public class AnswerActivity extends AppCompatActivity {
     private LinearLayout layout;
     private Call<List<QuestionResponse>> request;
     private int id;
+    private String question;
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer);
         layout = findViewById(R.id.detailLayout);
+        title = findViewById(R.id.titleTextView);
 
         Intent intent = getIntent();
         id = intent.getIntExtra("questionId", 1);
+        question = intent.getStringExtra("question");
+        Log.i("question", question);
 
         getQuestions();
     }
@@ -47,7 +52,6 @@ public class AnswerActivity extends AppCompatActivity {
 
                 if(response.code() == 200){
                     List<QuestionResponse> result = response.body();
-
                     updateWidget(result);
                 }
             }
@@ -60,6 +64,9 @@ public class AnswerActivity extends AppCompatActivity {
     }
 
     private void updateWidget(List<QuestionResponse> result){
+        if(question!=null){
+            title.setText(question);
+        }
         for(int i=0; i < result.size(); i++) {
             QuestionResponse item = result.get(i);
 

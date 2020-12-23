@@ -111,9 +111,10 @@ public class CategoryActivity extends AppCompatActivity implements ClickListener
     }
 
     @Override
-    public void onClick(int questionId) {
+    public void onClick(int questionId, String question) {
         Intent intent = new Intent(getApplicationContext(), AnswerActivity.class);
         intent.putExtra("questionId",questionId);
+        intent.putExtra("question", question);
         startActivity(intent);
     }
 }

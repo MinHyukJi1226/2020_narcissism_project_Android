@@ -33,7 +33,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
         if(listener != null){
             holder.itemView.setOnClickListener(v->{
-                listener.onClick(d.getQuestionId());
+                listener.onClick(d.getQuestionId(), d.getTitle());
             });
         }
     }

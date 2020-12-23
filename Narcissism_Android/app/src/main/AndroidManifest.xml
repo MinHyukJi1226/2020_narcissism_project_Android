@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Narcissism_Android"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AnswerActivity"/>
+        <activity android:name=".AnswerActivity">
+        </activity>
+
         <activity android:name=".StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +24,9 @@
         </activity>
         <activity android:name=".OptionActivity" />
         <activity android:name=".SearchingActivity" />
-        <activity android:name=".CategoryActivity" />
+        <activity android:name=".CategoryActivity">
+
+        </activity>
         <activity android:name=".MainActivity"/>
     </application>
 
