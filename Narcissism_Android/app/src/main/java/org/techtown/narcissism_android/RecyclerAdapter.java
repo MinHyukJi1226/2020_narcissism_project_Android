@@ -29,7 +29,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.ItemViewHolder holder,int category) {
         Data d = questiondata.get(category);
-        holder.title.setText(d.getTitle());
+        holder.title.setText( d.getTitle());
 
         if(listener != null){
             holder.itemView.setOnClickListener(v->{
