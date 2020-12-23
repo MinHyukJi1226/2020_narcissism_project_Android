@@ -1,6 +1,7 @@
 package org.techtown.narcissism_android;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.EditText;
@@ -68,7 +69,8 @@ public class AnswerActivity extends AppCompatActivity {
                 layout.addView(newText);
             }
             else if(item.type == 2){
-                ImageView img = new ImageView(this);
+                ImageView img = new ImageView (this);
+                img.setAdjustViewBounds(true);
                 Glide.with(this).load(item.content).into(img);
                 layout.addView(img);
             }
