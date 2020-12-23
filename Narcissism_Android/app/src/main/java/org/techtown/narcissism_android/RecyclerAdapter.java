@@ -1,5 +1,7 @@
 package org.techtown.narcissism_android;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.SplittableRandom;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder> {
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemViewHolder>{
 
     private ArrayList<Data> questiondata = new ArrayList<>();
+    private ClickListener listener;
 
     @NonNull
     @Override
@@ -24,8 +27,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapter.ItemViewHolder holder, int position) {
-        holder.onBind(questiondata.get(position));
+    public void onBindViewHolder(@NonNull RecyclerAdapter.ItemViewHolder holder,int category) {
+        Data d = questiondata.get(category);
+        holder.title.setText(d.getTitle());
+
+        if(listener != null){
+            holder.itemView.setOnClickListener(v->{
+                listener.onClick(d.getQuestionId());
+            });
+        }
     }
     @Override
     public int getItemCount() {
@@ -34,7 +44,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
     public void addItem(Data data){
         questiondata.add(data);
+    }
 
+    public void setListener(ClickListener listener){
+        this.listener = listener;
     }
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
@@ -45,17 +58,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
 
         ItemViewHolder(View itemView) {
             super(itemView);
-
             title = itemView.findViewById(R.id.questionTitle);
             //content = itemView.findViewById(R.id.questionContent);
-            imageView = itemView.findViewById(R.id.questionImage);
+            //imageView = itemView.findViewById(R.id.questionImage);
 
         }
-        void onBind(Data data){
-            title.setText(data.getTitle());
-            //content.setText(data.getContent());
-            //imageView.setImageResource(data.getImage());
-        }
-
     }
 }

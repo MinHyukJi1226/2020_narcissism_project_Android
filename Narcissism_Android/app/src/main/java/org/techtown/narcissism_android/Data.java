@@ -5,6 +5,7 @@ public class Data {
     private String title;
     private String content;
     private int image;
+    private int questionId;
 
     public void setTitle(String title) {
         this.title = title;
@@ -16,6 +17,14 @@ public class Data {
 
     public void setImage(int image) {
         this.image = image;
+    }
+
+    public int getQuestionId() {
+        return questionId;
+    }
+
+    public void setQuestionId(int questionId) {
+        this.questionId = questionId;
     }
 
     public String getTitle() {
