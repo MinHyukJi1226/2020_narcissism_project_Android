@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.techtown.narcissism_android.data.CategoryResponse;
@@ -27,6 +28,7 @@ public class CategoryActivity extends AppCompatActivity implements ClickListener
     private RecyclerAdapter adapter = new RecyclerAdapter();
     private Call<List<CategoryResponse>> request;
     private int id;
+    private ImageView imageView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class CategoryActivity extends AppCompatActivity implements ClickListener
         setContentView(R.layout.activity_category);
 
         TextView category = findViewById(R.id.categoryId);
+        imageView = findViewById(R.id.categoryImage);
 
         Intent intent = getIntent();
         id = intent.getIntExtra("categoryId", 1);
@@ -42,22 +45,27 @@ public class CategoryActivity extends AppCompatActivity implements ClickListener
         switch (categoryId){
             case 1:{
                 category.setText("청소");
+                imageView.setImageResource(R.drawable.clean_girl);
                 break;
             }
             case 2:{
                 category.setText("분리수거");
+                imageView.setImageResource(R.drawable.recycle);
                 break;
             }
             case 3:{
                 category.setText("의류");
+                imageView.setImageResource(R.drawable.clothes);
                 break;
             }
             case 4:{
                 category.setText("인테리어");
+                imageView.setImageResource(R.drawable.interior);
                 break;
             }
             case 5:{
                 category.setText("팁");
+                imageView.setImageResource(R.drawable.tips);
                 break;
             }
         }

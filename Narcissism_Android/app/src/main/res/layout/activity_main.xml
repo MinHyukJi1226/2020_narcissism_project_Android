@@ -8,33 +8,30 @@
 
     <TextView
         android:id="@+id/textClothes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="207dp"
+        android:layout_width="28dp"
+        android:layout_height="15dp"
         android:text="의류"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/buttonTip"
-        app:layout_constraintStart_toStartOf="@+id/buttonTip" />
+        app:layout_constraintEnd_toEndOf="@+id/buttonClothes"
+        app:layout_constraintStart_toStartOf="@+id/buttonClothes"
+        app:layout_constraintTop_toBottomOf="@+id/buttonClothes" />
 
     <TextView
         android:id="@+id/textTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="95dp"
-        android:layout_marginBottom="21dp"
         android:text="팁"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/buttonTip"
+        app:layout_constraintStart_toStartOf="@+id/buttonTip"
+        app:layout_constraintTop_toBottomOf="@+id/buttonTip" />
 
     <TextView
         android:id="@+id/textInterior"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="인테리어"
-        app:layout_constraintBottom_toBottomOf="@+id/textClothes"
         app:layout_constraintEnd_toEndOf="@+id/buttonInterior"
         app:layout_constraintStart_toStartOf="@+id/buttonInterior"
-        app:layout_constraintTop_toTopOf="@+id/textClothes" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonInterior" />
 
     <TextView
         android:id="@+id/textLocation"
@@ -53,62 +50,61 @@
 
     <Button
         android:id="@+id/buttonClean"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="43dp"
-        android:text="청소"
-        app:layout_constraintBottom_toTopOf="@+id/textClean"
+        android:background="@drawable/wiping_swipe_for_floors"
         app:layout_constraintEnd_toStartOf="@+id/buttonRecycle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonRecycle" />
+        app:layout_constraintTop_toBottomOf="@+id/textCategory" />
 
     <Button
         android:id="@+id/buttonClothes"
         android:layout_width="150dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:text="의류"
-        app:layout_constraintBottom_toTopOf="@+id/textClothes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/buttonInterior" />
+        android:layout_height="150dp"
+        android:layout_marginTop="62dp"
+        android:background="@drawable/casual_t_shirt"
+        app:layout_constraintEnd_toEndOf="@+id/buttonClean"
+        app:layout_constraintStart_toStartOf="@+id/buttonClean"
+        app:layout_constraintTop_toBottomOf="@+id/buttonClean" />
 
     <Button
         android:id="@+id/buttonTip"
         android:layout_width="150dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginBottom="19dp"
-        android:text="팁"
-        app:layout_constraintBottom_toBottomOf="@+id/textTip"
-        app:layout_constraintEnd_toEndOf="@+id/textTip"
-        app:layout_constraintStart_toEndOf="@+id/textTip"
-        app:layout_constraintTop_toBottomOf="@+id/textClothes" />
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/cloud_computing"
+        app:layout_constraintEnd_toEndOf="@+id/buttonClothes"
+        app:layout_constraintStart_toStartOf="@+id/buttonClothes"
+        app:layout_constraintTop_toBottomOf="@+id/buttonClothes" />
 
     <Button
         android:id="@+id/buttonRecycle"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="36dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="60dp"
         android:layout_marginBottom="19dp"
-        android:text="분리수거"
-        app:layout_constraintBottom_toBottomOf="@+id/textRecycle"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/wiping_trash_bag_with_recycle_symbol_of_arrows_triangle"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonClean"
         app:layout_constraintStart_toEndOf="@+id/buttonClean"
-        app:layout_constraintTop_toBottomOf="@+id/textCategory" />
+        app:layout_constraintTop_toTopOf="@+id/buttonClean"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonInterior"
         android:layout_width="150dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="36dp"
-        android:layout_marginBottom="19dp"
-        android:text="인테리어"
-        app:layout_constraintBottom_toBottomOf="@+id/textInterior"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textRecycle" />
+        android:layout_height="150dp"
+        android:layout_marginTop="62dp"
+        android:background="@drawable/sofa"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonClothes"
+        app:layout_constraintEnd_toEndOf="@+id/buttonRecycle"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/buttonRecycle"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRecycle"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textCategory"
@@ -126,21 +122,21 @@
         android:id="@+id/textClean"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="12dp"
         android:text="청소"
-        app:layout_constraintBottom_toTopOf="@+id/buttonClothes"
-        app:layout_constraintEnd_toEndOf="@+id/textCategory"
-        app:layout_constraintStart_toStartOf="@+id/textClothes" />
+        app:layout_constraintEnd_toEndOf="@+id/buttonClean"
+        app:layout_constraintStart_toStartOf="@+id/buttonClean"
+        app:layout_constraintTop_toBottomOf="@+id/buttonClean" />
 
     <TextView
         android:id="@+id/textRecycle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="306dp"
+        android:layout_marginTop="8dp"
         android:text="분리수거"
-        app:layout_constraintEnd_toEndOf="@+id/textInterior"
-        app:layout_constraintStart_toStartOf="@+id/textInterior"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/buttonRecycle"
+        app:layout_constraintStart_toStartOf="@+id/buttonRecycle"
+        app:layout_constraintTop_toBottomOf="@+id/buttonRecycle" />
 
     <ImageView
         android:id="@+id/imageSearch"
