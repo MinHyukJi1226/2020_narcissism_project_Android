@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import org.techtown.narcissism_android.data.CategoryResponse;
@@ -21,7 +22,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class CategoryActivity extends AppCompatActivity {
+public class CategoryActivity extends AppCompatActivity implements ClickListener{
 
     private RecyclerAdapter adapter = new RecyclerAdapter();
     private Call<List<CategoryResponse>> request;
@@ -69,7 +70,6 @@ public class CategoryActivity extends AppCompatActivity {
         request.enqueue((new Callback<List<CategoryResponse>>() {
             @Override
             public void onResponse(Call<List<CategoryResponse>> call, Response<List<CategoryResponse>> response) {
-
                 if(response.code() == 200){
                     List<CategoryResponse> result = response.body();
                     getData(result);
@@ -78,7 +78,6 @@ public class CategoryActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<List<CategoryResponse>> call, Throwable t) {
-
             }
         }));
     }
@@ -93,13 +92,28 @@ public class CategoryActivity extends AppCompatActivity {
 
     private void getData(List<CategoryResponse> categoryList){
 
+        adapter.setListener(this);
+
         for(int i = 0; i < categoryList.size(); i++){
             Data data = new Data();
             data.setTitle(categoryList.get(i).question);
+            data.setQuestionId(categoryList.get(i).questionId);
 //            data.setContent(listContent.get(i));
 //            data.setImage(listImage.get(i));
             adapter.addItem(data);
         }
         adapter.notifyDataSetChanged();
+    }
+
+    public void onItemClick(View view){
+        int categoryId = view.getId();
+
+    }
+
+    @Override
+    public void onClick(int questionId) {
+        Intent intent = new Intent(getApplicationContext(), AnswerActivity.class);
+        intent.putExtra("questionId",questionId);
+        startActivity(intent);
     }
 }
