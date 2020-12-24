@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_navigation"
+    app:startDestination="@id/mainActivity">
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="org.techtown.narcissism_android.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main" >
+        <action
+            android:id="@+id/action_mainActivity_to_categoryActivity"
+            app:destination="@id/categoryActivity" />
+    </activity>
+    <activity
+        android:id="@+id/categoryActivity"
+        android:name="org.techtown.narcissism_android.CategoryActivity"
+        android:label="activity_category"
+        tools:layout="@layout/activity_category" >
+        <action
+            android:id="@+id/action_categoryActivity_to_optionActivity"
+            app:destination="@id/optionActivity" />
+    </activity>
+    <activity
+        android:id="@+id/optionActivity"
+        android:name="org.techtown.narcissism_android.OptionActivity"
+        android:label="activity_option"
+        tools:layout="@layout/activity_option" />
+    <activity
+        android:id="@+id/searchingActivity"
+        android:name="org.techtown.narcissism_android.SearchingActivity"
+        android:label="activity_searching"
+        tools:layout="@layout/activity_searching" />
+    <activity
+        android:id="@+id/startActivity"
+        android:name="org.techtown.narcissism_android.StartActivity"
+        android:label="activity_start"
+        tools:layout="@layout/activity_start" >
+        <action
+            android:id="@+id/action_startActivity_to_mainActivity"
+            app:destination="@id/mainActivity" />
+    </activity>
+    <activity
+        android:id="@+id/answerActivity"
+        android:name="org.techtown.narcissism_android.AnswerActivity"
+        android:label="AnswerActivity" />
+</navigation>

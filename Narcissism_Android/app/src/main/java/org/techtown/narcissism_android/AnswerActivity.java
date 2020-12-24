@@ -1,10 +1,13 @@
 package org.techtown.narcissism_android;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.media.Image;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -29,6 +32,7 @@ public class AnswerActivity extends AppCompatActivity {
     private int id;
     private String question;
     private TextView title;
+    private ImageButton back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,12 +40,14 @@ public class AnswerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_answer);
         layout = findViewById(R.id.detailLayout);
         title = findViewById(R.id.titleTextView);
+        back = findViewById(R.id.backBnt);
 
         Intent intent = getIntent();
         id = intent.getIntExtra("questionId", 1);
         question = intent.getStringExtra("question");
         Log.i("question", question);
-
+        title.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 25);
+        title.setTextColor(Color.parseColor("#ffffff"));
         getQuestions();
     }
     private void getQuestions(){
@@ -55,7 +61,6 @@ public class AnswerActivity extends AppCompatActivity {
                     updateWidget(result);
                 }
             }
-
             @Override
             public void onFailure(Call<List<QuestionResponse>> call, Throwable t) {
 
@@ -73,6 +78,8 @@ public class AnswerActivity extends AppCompatActivity {
             if (item.type == 1) {
                 TextView newText = new TextView(this);
                 newText.setText(item.content);
+                newText.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20);
+                title.setLineSpacing(TypedValue.COMPLEX_UNIT_DIP, 1);
                 layout.addView(newText);
             }
             else if(item.type == 2){

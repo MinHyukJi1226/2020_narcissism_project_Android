@@ -21,10 +21,10 @@
 
     <TextView
         android:id="@+id/titleTextView"
-        android:layout_width="147dp"
-        android:layout_height="34dp"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="100dp"
+        android:layout_width="375dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginTop="76dp"
         android:text="제목"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -51,7 +51,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="74dp"
+        android:layout_marginTop="83dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
